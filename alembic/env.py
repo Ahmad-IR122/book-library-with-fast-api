@@ -8,6 +8,8 @@ from alembic import context
 from config.config import settings
 from database import BaseModel
 from models.book import Book
+from models.member import Member
+from models.borrowing import Borrowing
 
 
 # This is the Alembic Config object.
