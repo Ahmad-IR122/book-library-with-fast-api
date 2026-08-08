@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from sqlalchemy import text
-
+from routers.books import router as books_router
 from database import engine
 
 app = FastAPI()
@@ -14,3 +14,5 @@ def db_check():
   with engine.connect() as connection:
         connection.execute(text("SELECT 1"))
   return {"message": "Connected to Supabase successfully"}
+
+app.include_router(books_router)
