@@ -28,10 +28,7 @@ def create_book(book: BookCreate, db: Session = Depends(get_db)):
     db.add(new_book)
     db.commit()
     db.refresh(new_book)
-    return {
-      "message": "Book created successfully",
-      "book": new_book
-    }
+    return new_book
 
 
 @router.put("/update-book/{book_id}", response_model=BookResponse)
