@@ -16,7 +16,6 @@ def get_books(db: Session = Depends(get_db)):
 @router.get("/get-book/{book_id}", response_model=BookResponse)
 def get_book(book_id: int, db: Session = Depends(get_db)):
     book = db.query(Book).filter(Book.id == book_id).first()
-
     if not book:
         raise HTTPException(status_code=404, detail="Book not found")
     return book
