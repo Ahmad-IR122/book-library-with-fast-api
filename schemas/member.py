@@ -1,18 +1,19 @@
-import datetime
+from datetime import datetime
 
-from database import BaseModel
+from pydantic import BaseModel
 
-class createMember(BaseModel):
+
+class MemberCreate(BaseModel):
     name: str
     email: str
-    password: str
-    role: str
-    
-class updateMember(BaseModel):
+    phone: str | None = None
+
+
+class MemberUpdate(BaseModel):
     name: str | None = None
     email: str | None = None
-    password: str | None = None
-    role: str | None = None
+    phone: str | None = None
+
 
 class MemberResponse(BaseModel):
     id: int
