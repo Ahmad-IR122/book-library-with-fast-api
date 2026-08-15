@@ -291,6 +291,3 @@ Current security-related behaviors present in code:
 
 - Ahmad Irshaid
 
-## 📄 License
-
-No license file is currently present in this repository.
